@@ -112,19 +112,15 @@ section p strong {
   color: #0f172a;
   font-weight: 600;
 }
+/* Hamburger icon styles */
 .hamburger-icon {
   display: none;
-  /* Hidden by default on desktop */
   cursor: pointer;
   padding: 10px;
   position: absolute;
-  /* Position relative to header */
   top: 20px;
-  /* Adjust as needed */
   right: 20px;
-  /* Adjust as needed */
   z-index: 1001;
-  /* Above the nav menu */
 }
 .hamburger-icon .bar {
   width: 25px;
@@ -132,21 +128,44 @@ section p strong {
   background-color: white;
   margin: 5px 0;
   transition: 0.4s;
-  /* Smooth transition for icon animation */
 }
 
-/* Optional: Hamburger icon animation when active */
+/* Hamburger icon animation when active */
 .hamburger-icon.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(-45deg);
 }
-
 .hamburger-icon.active .bar:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger-icon.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(45deg);
 }
+
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: block;
+  }
+  nav#main-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: #1e293b;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  nav#main-nav ul.active {
+    display: flex;
+  }
+}
+
 @media (min-width: 768px) {
   .header-content {
     flex-direction: row;
