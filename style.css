@@ -107,7 +107,7 @@ section p {
 }
 
 section p strong {
-  display: inline-block;
+  /* display: inline-block; */
   min-width: 90px;
   color: #0f172a;
   font-weight: 600;
@@ -253,4 +253,33 @@ button:hover {
 just{
   text-align: justify;
   text-justify: inter-word;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-left: 0;
+  margin-top: 15px;
+  list-style: none;
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #1e293b;
 }
