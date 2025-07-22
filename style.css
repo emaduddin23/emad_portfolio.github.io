@@ -112,7 +112,77 @@ section p strong {
   color: #0f172a;
   font-weight: 600;
 }
+.hamburger-icon {
+  display: none;
+  /* Hidden by default on desktop */
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  /* Position relative to header */
+  top: 20px;
+  /* Adjust as needed */
+  right: 20px;
+  /* Adjust as needed */
+  z-index: 1001;
+  /* Above the nav menu */
+}
+.hamburger-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+  /* Smooth transition for icon animation */
+}
 
+/* Optional: Hamburger icon animation when active */
+.hamburger-icon.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.hamburger-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+@media (min-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    /* Layout content in a row */
+    justify-content: space-between;
+    /* Space out items */
+    align-items: center;
+  }
+
+  /* Hide the hamburger icon on larger screens */
+  .hamburger-icon {
+    display: none;
+  }
+
+  /* Show the navigation links in a row on larger screens */
+  nav ul {
+    position: static;
+    /* Remove absolute positioning */
+    max-height: none;
+    /* Remove height constraint */
+    flex-direction: row;
+    /* Display links in a row */
+    background-color: transparent;
+    /* Transparent background */
+    padding: 0;
+    gap: 20px;
+    /* Restore original gap */
+  }
+
+  nav li {
+    display: inline;
+    /* Display list items inline */
+    margin-bottom: 0;
+    /* Remove margin */
+  }
+}
 /* List styles */
 ul {
   padding-left: 25px;
