@@ -249,3 +249,8 @@ button:hover {
 .thankyou-btn:hover {
   background-color: #0284c7;
 }
+
+just{
+  text-align: justify;
+  text-justify: inter-word;
+}
